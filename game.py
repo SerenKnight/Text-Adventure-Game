@@ -6,9 +6,6 @@ import os
 #! Put these in lists then for the decision: if option in list...
 home_options = ["forest", "Cave", "Pond", "Mines"]
 
-if input.lower() in home_actions.lower():
-    got to ino
-
 home_options = "Forest / Cave / Pond / Mines"
 home_actions = "Eat / Move / Map / Build / Bag / Stats"
 house_options = "Forest / Cave / Pond / Mines / Interior"
@@ -27,6 +24,7 @@ mountain_options = "Cave"
 mountain_actions = "Eat / Move / Map / Bag / Stats"
 
 # Environment
+
 
 class Main:
     def __init__(self):
@@ -87,14 +85,13 @@ class Pockets:
                         for i in range(self.temp_inventory.count(element)):
                             self.temp_inventory.remove(element)
 
-
     # bag, drop, bag.drop rather than drop_item
     # bag class
     # item class (name, quantity)
     # player class
     # link all together
 
-    def drop_item(self, item, drop_number: int=1):
+    def drop_item(self, item, drop_number: int = 1):
         if drop_number == 1:
             if item.endswith("s"):
                 print(f"\n{item} have been removed")
@@ -137,6 +134,7 @@ class Location:
     def current_location(self):
         return self.active_location
 
+
 # classes in one section
 # instances together in the seciton below
 
@@ -146,6 +144,7 @@ location.current_location()
 # location property/attribute should be a property of player
 # map should be a function/class method of the player which gets location
 # (player.location)
+
 
 class Map:
     def __init__(self):
@@ -176,7 +175,9 @@ class Map:
         view_map = Image.open(map_files, "r")
         view_map.show()
 
+
 # should be just name, health, energy
+
 
 class Player:
     def __init__(self):
@@ -222,10 +223,12 @@ class World:
                 f"day in the world! The weather today is {self.world_weather}.\n"
             )
 
+
 # function within the player class
 # static methods
 # class methods
 # normal methods
+
 
 def decision():
     while not main.game_ended:
@@ -601,8 +604,10 @@ def decision():
                 case _:
                     print("\nInvalid Option\n")
 
+
 # player.alive?
 # then it will automatically run without needing to call it
+
 
 def health_check():
     if player.player_health <= 0:
